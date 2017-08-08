@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package dslVersion="1.0.0.0" 
+        Id="49bf3289-a14e-44b2-bd7b-35b58a97a3a1" 
+        solutionId="49bf3289-a14e-44b2-bd7b-35b58a97a3a1" 
+        xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" 
+        name="Senac.Sig"
+        sharePointProductVersion="16.0">
+  <features>
+        <featureReference itemId="a9560ed7-0bc9-4be9-96b5-6bfe92d56d5c" />
+  </features>
+</package>
