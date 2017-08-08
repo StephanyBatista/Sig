@@ -25,6 +25,7 @@
             $('#s4-ribbonrow').remove();
             $('#siteIcon').remove();
             $('#s4-titlerow').remove();
+            $('#s4-workspace').css('height', '');
         });
     </script>
 </asp:Content>
