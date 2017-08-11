@@ -33,13 +33,13 @@
 <%-- The markup and script in the following Content element will be placed in the <body> of the page --%>
 <asp:Content ContentPlaceHolderID="PlaceHolderMain" runat="server">
 
-    <div class="container-fluid">
+    <%--<div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <img src="../images/banner_senac.png" alt="Banner Senac"/>
             </div>
         </div>            
-    </div>
+    </div>--%>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -47,15 +47,8 @@
                 <hr/>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="list-group">
-                            <a href="#" class="list-group-item">
-                                <h4 class="list-group-item-heading"><strong>List group item heading</strong></h4>
-                                <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                            </a>
-                            <a href="#" class="list-group-item">
-                                <h4 class="list-group-item-heading"><strong>List group item heading</strong></h4>
-                                <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                            </a>
+                        <div id="noticiasDiv" class="list-group">
+                            
                         </div>                        
                     </div>
                     <div class="col-md-6"></div>
@@ -109,7 +102,7 @@
                 <div class="row">
                     <div class="col-md-12">
 
-                        <table class="table">
+                        <table id="documentosTable" class="table">
                             <thead>
                             <tr>
                                 <th>Nome</th>
@@ -117,14 +110,6 @@
                             </tr>                                    
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>EDITAL CC022017 - GECOM</td>
-                                <td>
-                                    <button class="btn btn-default btn-xs">
-                                        <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                                    </button>
-                                </td>
-                            </tr>                                                                       
                             </tbody>
                         </table>                            
 

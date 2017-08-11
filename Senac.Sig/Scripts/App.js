@@ -1,6 +1,15 @@
 ﻿'use strict';
 
-var tarefaList, documentoList, tarefaItems, documentoItems, appweburl, hostweburl, context, appContextSite;
+var tarefaList,    
+    tarefaItems,
+    documentoList,
+    documentoItems,
+    avisoList,
+    avisoItems,
+    appweburl,
+    hostweburl,
+    context,
+    appContextSite;
 
 ExecuteOrDelayUntilScriptLoaded(initializePage, "sp.js");
 
@@ -19,6 +28,8 @@ function initializePage() {
     tarefaItems = tarefaList.getItems(query);
     documentoList = web.get_lists().getByTitle("Documentos");
     documentoItems = documentoList.getItems(query);
+    avisoList = web.get_lists().getByTitle("Avisos");
+    avisoItems = avisoList.getItems(query);
 
     // This code runs when the DOM is ready and creates a context object which is needed to use the SharePoint object model
     $(document).ready(function () {
@@ -27,9 +38,11 @@ function initializePage() {
 
     // This function prepares, loads, and then executes a SharePoint query to get the current users information
     function loadLists() {
-        //context.load(user);
+        
         context.load(tarefaList);
         context.load(tarefaItems);
+        context.load(avisoList);
+        context.load(avisoItems);
         context.load(documentoList);
         context.load(documentoItems, 'Include(Title, ContentType, File)');
         context.executeQueryAsync(onGetListsSuccess, onGetListsFail);
@@ -39,8 +52,31 @@ function initializePage() {
     // It replaces the contents of the 'message' element with the user name
     function onGetListsSuccess() {
 
+        prepareAvisosList();
         prepareTarefasList();
         prepareDocumentosList();
+    }
+
+    function prepareAvisosList() {
+
+        var items = avisoItems.getEnumerator();
+
+        while (items.moveNext()) {
+            var item = items.get_current();
+
+            var id = item.get_item('ID');
+            var title = item.get_item('Title');
+            var body = item.get_item('Body');
+            var listRef = item.get_item('FileDirRef');
+            var url = listRef + '/DispForm.aspx?ID=' + id; 
+
+            $('#noticiasDiv')
+                .append(
+                '<a href="' + url + '" class="list-group-item">'+
+                '<h4 class="list-group-item-heading"><strong>' + title + '</strong></h4>'+
+                '<p class="list-group-item-text">' + body + '</p>'+
+                '</a>');
+        }
     }
 
     function prepareTarefasList() {
@@ -58,7 +94,6 @@ function initializePage() {
             var startDate = item.get_item('StartDate');
             var dueDate = item.get_item('DueDate');
 
-            console.log(title);
             $('#projetosTable tr:last')
                 .after('<tr>' +
                     '<td>' + id + '</td>' +
@@ -79,12 +114,14 @@ function initializePage() {
         while (items.moveNext()) {
             var item = items.get_current();
 
-            var id = item.get_item('ID');
-            var name = item.get_item('FileLeafRef');
-            var title = item.get_item('Title');
-            var file = item.get_file();
+            var title = item.get_file().get_name();
+            var file = item.get_file().get_linkingUrl();
 
-            console.log(title);
+            $('#documentosTable tr:last')
+                .after('<tr>' +
+                '<td><a href="' + file + '">' + title + '</a></td>' +
+                '<td></td>' +
+                '</tr >');
             
         }
     }
