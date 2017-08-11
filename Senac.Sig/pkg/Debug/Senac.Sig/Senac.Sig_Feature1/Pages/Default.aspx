@@ -21,11 +21,11 @@
     <script type="text/javascript">
         $(function() {
 
-            $('#suiteBarDelta').remove();
-            $('#s4-ribbonrow').remove();
-            $('#siteIcon').remove();
-            $('#s4-titlerow').remove();
-            $('#s4-workspace').css('height', '');
+            $('#suiteBarDelta').css('display', 'none');
+            $('#s4-ribbonrow').css('display', 'none');
+            $('#siteIcon').css('display', 'none');
+            $('#s4-titlerow').css('display', 'none');
+            
         });
     </script>
 </asp:Content>
@@ -82,58 +82,20 @@
                 <hr/>
                 <div class="row">
                     <div class="col-md-12">
-                        <table class="table">
+                        <table id="projetosTable" class="table">
                             <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Gerência</th>
-                                <th>Programa</th>
-                                <th>Nome do item</th>
-                                <th>% Concluido</th>                                        
-                                <th>Status do item</th>
-                                <th>Atribuido a</th>
-                                <th>Data de início</th>
-                                <th>Data de conclusão</th>
-                                <th>Data real de conclusão</th>
-                            </tr>                                    
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nome do item</th>
+                                    <th>% Concluido</th>                                        
+                                    <th>Status do item</th>
+                                    <th>Atribuido a</th>
+                                    <th>Data de início</th>
+                                    <th>Data de conclusão</th>
+                                </tr>                                    
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>GESIM</td>
-                                <td>MIRA</td>
-                                <td>PID - Desenvolvimento</td>
-                                <td>100</td>
-                                <td>Concluído</td>
-                                <td>Neila Aparecida S. do Nascimento</td>
-                                <td>21 de Dezembro de 2016</td>
-                                <td>24 de Janeiro</td>
-                                <td>24 de Janeiro</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>GESIM</td>
-                                <td>MIRA</td>
-                                <td>PID - Desenvolvimento</td>
-                                <td>100</td>
-                                <td>Concluído</td>
-                                <td>Neila Aparecida S. do Nascimento</td>
-                                <td>21 de Dezembro de 2016</td>
-                                <td>24 de Janeiro</td>
-                                <td>24 de Janeiro</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>GESIM</td>
-                                <td>MIRA</td>
-                                <td>PID - Desenvolvimento</td>
-                                <td>100</td>
-                                <td>Concluído</td>
-                                <td>Neila Aparecida S. do Nascimento</td>
-                                <td>21 de Dezembro de 2016</td>
-                                <td>24 de Janeiro</td>
-                                <td>24 de Janeiro</td>
-                            </tr>                                                                        
+                            
                             </tbody>
                         </table>
                     </div>
