@@ -44,7 +44,9 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Elements.xml" />
     <Content Include="Images\banner_senac.PNG" />
+    <Content Include="Index.html" />
     <Content Include="Pages\Teste.html" />
     <Content Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
@@ -55,6 +57,9 @@
     </None>
     <Content Include="Pages\Elements.xml" />
     <Content Include="Pages\Default.aspx" />
+    <None Include="SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{fadab9a1-c1f0-4c31-a255-05ac6c010197}</SharePointProjectItemId>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\jquery-1.9.1.min.map" />
@@ -87,11 +92,11 @@
     <None Include="Package\Package.Template.xml">
       <DependentUpon>Package.package</DependentUpon>
     </None>
-    <None Include="Features\Feature1\Feature1.feature">
+    <None Include="Features\Senac.Sig\Senac.Sig.feature">
       <FeatureId>{a9560ed7-0bc9-4be9-96b5-6bfe92d56d5c}</FeatureId>
     </None>
-    <None Include="Features\Feature1\Feature1.Template.xml">
-      <DependentUpon>Feature1.feature</DependentUpon>
+    <None Include="Features\Senac.Sig\Senac.Sig.Template.xml">
+      <DependentUpon>Senac.Sig.feature</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

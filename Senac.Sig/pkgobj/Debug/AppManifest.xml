@@ -7,7 +7,7 @@
      SharePointMinVersion="16.0.0.0"
 >
   <Properties>
-    <Title>Senac.Sig</Title>
+    <Title>Sig - SENAC</Title>
     <StartPage>~appWebUrl/Pages/Default.aspx?{StandardTokens}</StartPage>
   </Properties>
 

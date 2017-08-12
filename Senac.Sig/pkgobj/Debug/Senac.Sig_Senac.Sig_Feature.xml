@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Description="SharePoint Add-in Feature" Id="a9560ed7-0bc9-4be9-96b5-6bfe92d56d5c" Scope="Web" Title="Senac.Sig Feature1" Version="1.0.0.0">
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Description="Sistema de Informação Gerencial - SENAC" Id="a9560ed7-0bc9-4be9-96b5-6bfe92d56d5c" Scope="Web" Title="Sig" Version="1.0.0.0">
   <ElementManifests>
     <ElementManifest Location="Pages\Elements.xml" />
     <ElementFile Location="Pages\Default.aspx" />
@@ -17,6 +17,8 @@
     <ElementManifest Location="Images\Elements.xml" />
     <ElementFile Location="Images\AppIcon.png" />
     <ElementFile Location="Images\banner_senac.PNG" />
+    <ElementManifest Location="Elements.xml" />
+    <ElementFile Location="Index.html" />
   </ElementManifests>
   <UpgradeActions>
     <VersionRange>
@@ -25,6 +27,7 @@
         <ElementManifest Location="Scripts\Elements.xml" />
         <ElementManifest Location="Content\Elements.xml" />
         <ElementManifest Location="Images\Elements.xml" />
+        <ElementManifest Location="Elements.xml" />
       </ApplyElementManifests>
     </VersionRange>
   </UpgradeActions>
