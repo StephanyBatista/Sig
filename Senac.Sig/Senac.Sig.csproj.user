@@ -3,12 +3,15 @@
   <PropertyGroup>
     <SharePointSiteUrl>https://devstephanybatista.sharepoint.com/</SharePointSiteUrl>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <RemoteDebugEnabled>false</RemoteDebugEnabled>
+  </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{C1CDDADD-2546-481F-9697-4EA41081F2FC}">
         <ProjectStore>
-          <AppInstancePackageModifiedTime>2017-08-12T13:21:22.0263459Z</AppInstancePackageModifiedTime>
-          <AppInstanceId>33ee40e4-2ee3-4de0-83f9-65bf5307cee9</AppInstanceId>
+          <AppInstancePackageModifiedTime>2017-08-18T01:43:21.4165322Z</AppInstancePackageModifiedTime>
+          <AppInstanceId>9af57d3a-ba69-463a-bbc1-06f95746a09c</AppInstanceId>
         </ProjectStore>
       </FlavorProperties>
     </VisualStudio>

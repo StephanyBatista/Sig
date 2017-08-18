@@ -60,9 +60,11 @@
                 <hr/>
                 <div class="row">
                     <div class="col-md-6">
-                        <canvas id="myChart" width="auto" height="100"></canvas>
+                        <canvas id="progressoTotalDoProjeto" width="auto" height="100"></canvas>
                     </div>
-                    <div class="col-md-6"></div>
+                    <div class="col-md-6">
+                        <canvas id="progressoDetalhadoDoProjeto" width="auto" height="100"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
@@ -118,38 +120,7 @@
 
     </div>
     <script>
-        var ctx = document.getElementById("myChart");
-        var myChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-                datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
-                    backgroundColor: [
-                        'rgba(246, 140, 31, 0.8)'
-                    ],
-                    borderColor: [
-                        'rgba(246, 140, 31, 0.4)',
-                        'rgba(246, 140, 31, 0.4)',
-                        'rgba(246, 140, 31, 0.4)',
-                        'rgba(246, 140, 31, 0.4)',
-                        'rgba(246, 140, 31, 0.4)',
-                        'rgba(246, 140, 31, 0.4)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero:true
-                        }
-                    }]
-                }
-            }
-        });
+        
     </script>
 
 </asp:Content>

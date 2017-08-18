@@ -6,6 +6,10 @@ var tarefaList,
     documentoItems,
     avisoList,
     avisoItems,
+    progressoTotalDoProjetoList,
+    progressoTotalDoProjetoItems,
+    progressoDetalhadoDoProjetoList,
+    progressoDetalhadoDoProjetoItems,
     appweburl,
     hostweburl,
     context,
@@ -30,6 +34,10 @@ function initializePage() {
     documentoItems = documentoList.getItems(query);
     avisoList = web.get_lists().getByTitle("Avisos");
     avisoItems = avisoList.getItems(query);
+    progressoTotalDoProjetoList = web.get_lists().getByTitle("Progresso Total do Projeto");
+    progressoTotalDoProjetoItems = progressoTotalDoProjetoList.getItems(query);
+    progressoDetalhadoDoProjetoList = web.get_lists().getByTitle("Progresso Detalhado do Projeto");
+    progressoDetalhadoDoProjetoItems = progressoDetalhadoDoProjetoList.getItems(query);
 
     // This code runs when the DOM is ready and creates a context object which is needed to use the SharePoint object model
     $(document).ready(function () {
@@ -45,6 +53,10 @@ function initializePage() {
         context.load(avisoItems);
         context.load(documentoList);
         context.load(documentoItems, 'Include(Title, ContentType, File)');
+        context.load(progressoTotalDoProjetoList);
+        context.load(progressoTotalDoProjetoItems);
+        context.load(progressoDetalhadoDoProjetoList);
+        context.load(progressoDetalhadoDoProjetoItems);
         context.executeQueryAsync(onGetListsSuccess, onGetListsFail);
     }
 
@@ -55,6 +67,8 @@ function initializePage() {
         prepareAvisosList();
         prepareTarefasList();
         prepareDocumentosList();
+        prepareProgressoTotalDoProjetoList();
+        prepareProgressoDetalhadoDoProjetoList();
 
         $('#s4-titlerow').css('display', 'none');
     }
@@ -128,6 +142,102 @@ function initializePage() {
                 '</tr >');
             
         }
+    }
+
+    function prepareProgressoTotalDoProjetoList() {
+
+        var items = progressoTotalDoProjetoItems.getEnumerator();
+        var labels = [];
+        var data = [];
+
+        while (items.moveNext()) {
+            var item = items.get_current();
+            
+            labels.push(item.get_item('Title'));
+            data.push(item.get_item('_x0062_ht7'));
+        }
+
+        console.log(labels);
+        console.log(data);
+
+        var ctx = document.getElementById("progressoTotalDoProjeto");
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Progresso Total do Projeto',
+                    data: data,
+                    backgroundColor: [
+                        'rgba(51, 153, 255, 0.4)',
+                        'rgba(0, 204, 0, 0.4)',
+                        'rgba(255, 51, 153, 0.4)',
+                        'rgba(153, 153, 255, 0.4)',
+                        'rgba(255, 255, 153, 0.4)',
+                        'rgba(255, 102, 102, 0.4)'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true,
+                    text: 'Progresso Total do Projeto'
+                }
+            }
+        });
+    }
+
+    function prepareProgressoDetalhadoDoProjetoList() {
+
+        var items = progressoDetalhadoDoProjetoItems.getEnumerator();
+        var labels = [];
+        var trabalhosEstimadosData = [];
+        var trabalhosRealizadosData = [];
+
+        while (items.moveNext()) {
+            var item = items.get_current();
+
+            labels.push(item.get_item('Title'));
+            trabalhosEstimadosData.push(item.get_item('Trabalho_x0020_Estimado'));
+            trabalhosRealizadosData.push(item.get_item('Trabalho_x0020_Realizado'));
+        }
+
+        var barData = {
+            labels: labels,
+            datasets: [{
+                label: 'Trabalho Estimado',
+                backgroundColor: 'rgba(51, 153, 255, 0.4)',
+                data: trabalhosEstimadosData
+            }, {
+                label: 'Trabalho Realizado',
+                backgroundColor: 'rgba(0, 204, 0, 0.4)',
+                data: trabalhosRealizadosData
+            }]
+
+        };
+
+        var ctx = document.getElementById("progressoDetalhadoDoProjeto");
+        new Chart(ctx, {
+            type: 'horizontalBar',
+            data: barData,
+            options: {
+                
+                elements: {
+                    rectangle: {
+                        borderWidth: 2,
+                    }
+                },
+                responsive: true,
+                legend: {
+                    position: 'right',
+                },
+                title: {
+                    display: true,
+                    text: 'Progresso Detalhado do Projeto'
+                }
+            }
+        });
     }
 
     // This function is executed if the above call fails
