@@ -14,9 +14,12 @@
     <ElementFile Location="Content\App.css" />
     <ElementFile Location="Content\bootstrap.css" />
     <ElementFile Location="Content\bootstrap.min.css" />
+    <ElementFile Location="Content\bootstrap-theme.css" />
     <ElementManifest Location="Images\Elements.xml" />
     <ElementFile Location="Images\AppIcon.png" />
     <ElementFile Location="Images\banner_senac.PNG" />
+    <ElementFile Location="Images\gray_bg.png" />
+    <ElementFile Location="Images\senac_logo.png" />
     <ElementManifest Location="Elements.xml" />
     <ElementFile Location="Index.html" />
   </ElementManifests>

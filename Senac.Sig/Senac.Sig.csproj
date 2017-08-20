@@ -42,10 +42,13 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Elements.xml" />
     <Content Include="Images\banner_senac.PNG" />
+    <Content Include="Images\gray_bg.png" />
+    <Content Include="Images\senac_logo.png" />
     <Content Include="Index.html" />
     <Content Include="Pages\Teste.html" />
     <Content Include="Scripts\jquery-1.9.1.intellisense.js" />

@@ -13,6 +13,7 @@
     <meta name="WebPartPageExpansion" content="full" />
     
     <link href="../Content/bootstrap.css" rel="stylesheet">
+    <link href="../Content/bootstrap-theme.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
     <!-- Add your CSS styles to the following file -->
@@ -31,96 +32,103 @@
 <%-- The markup and script in the following Content element will be placed in the <body> of the page --%>
 <asp:Content ContentPlaceHolderID="PlaceHolderMain" runat="server">
 
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <img src="../images/senac_logo.png" width="110" alt="Imagem: logo do Senac"/>
+                </a>
+            </div>
+        </div>
+    </nav>        
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <img src="../images/banner_senac.png" alt="Banner Senac"/>
+
+        <section class="gray-container container-padding">
+            <div class="container alert">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="title">Notícias - Sistema integrado de Gestão - SIG</h2>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="noticiasDiv" class="list-group">
+                                </div>                        
+                            </div>
+                            <div class="col-md-6"></div>
+                        </div>
+                    </div>
+                </div>                
+            </div>                
+        </section>
+
+        <section class="blue-container container-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="title-white">Gráficos de acompanhamento de projetos</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <canvas id="progressoTotalDoProjeto" width="auto" height="100"></canvas>
+                            </div>
+                            <div class="col-md-6">
+                                <canvas id="progressoDetalhadoDoProjeto" width="auto" height="100"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>            
+        </section>
+        <section class="gray-container container-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="title">Principais tarefas</h2>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table id="projetosTable" class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nome do item</th>
+                                        <th>% Concluido</th>                                        
+                                        <th>Status do item</th>
+                                        <th>Atribuido a</th>
+                                        <th>Data de início</th>
+                                        <th>Data de conclusão</th>
+                                    </tr>                                    
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="gray-container container-padding">
+            <div class="container">                
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="title">Documentos</h2>
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <table id="documentosTable" class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th></th>
+                                    </tr>                                    
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>                            
+
+                            </div>
+                        </div>
+                    </div>
+                </div>            
+            </div>
+        </section>                                    
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Notícias - Sistema integrado de Gestão - SIG</h2>
-                <hr/>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div id="noticiasDiv" class="list-group">
-                            
-                        </div>                        
-                    </div>
-                    <div class="col-md-6"></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Gráficos de acompanhamento de projetos</h2>
-                <hr/>
-                <div class="row">
-                    <div class="col-md-6">
-                        <canvas id="progressoTotalDoProjeto" width="auto" height="100"></canvas>
-                    </div>
-                    <div class="col-md-6">
-                        <canvas id="progressoDetalhadoDoProjeto" width="auto" height="100"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Principais tarefas</h2>
-                <hr/>
-                <div class="row">
-                    <div class="col-md-12">
-                        <table id="projetosTable" class="table">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Nome do item</th>
-                                    <th>% Concluido</th>                                        
-                                    <th>Status do item</th>
-                                    <th>Atribuido a</th>
-                                    <th>Data de início</th>
-                                    <th>Data de conclusão</th>
-                                </tr>                                    
-                            </thead>
-                            <tbody>
-                            
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-            
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Documentos</h2>
-                <div class="row">
-                    <div class="col-md-12">
-
-                        <table id="documentosTable" class="table">
-                            <thead>
-                            <tr>
-                                <th>Nome</th>
-                                <th></th>
-                            </tr>                                    
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>                            
-
-                    </div>
-                </div>
-            </div>
-        </div>            
-
-    </div>
-    <script>
-        
-    </script>
-
 </asp:Content>

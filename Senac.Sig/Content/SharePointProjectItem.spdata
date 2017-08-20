@@ -5,5 +5,6 @@
     <ProjectItemFile Source="App.css" Target="Content\" Type="ElementFile" />
     <ProjectItemFile Source="bootstrap.css" Target="Content\" Type="ElementFile" />
     <ProjectItemFile Source="bootstrap.min.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="bootstrap-theme.css" Target="Content\" Type="ElementFile" />
   </Files>
 </ProjectItem>

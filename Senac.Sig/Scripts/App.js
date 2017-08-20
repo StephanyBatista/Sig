@@ -41,6 +41,9 @@ function initializePage() {
 
     // This code runs when the DOM is ready and creates a context object which is needed to use the SharePoint object model
     $(document).ready(function () {
+
+        Chart.defaults.global.defaultFontColor = "#fff";
+
         loadLists();
     });
 
@@ -169,12 +172,12 @@ function initializePage() {
                     label: 'Progresso Total do Projeto',
                     data: data,
                     backgroundColor: [
-                        'rgba(51, 153, 255, 0.4)',
-                        'rgba(0, 204, 0, 0.4)',
-                        'rgba(255, 51, 153, 0.4)',
-                        'rgba(153, 153, 255, 0.4)',
-                        'rgba(255, 255, 153, 0.4)',
-                        'rgba(255, 102, 102, 0.4)'
+                        'rgb(51, 153, 255)',
+                        'rgb(255, 215, 0)',
+                        'rgb(255,69,0)',
+                        'rgb(46,139,87)',
+                        'rgb(160,82,45)',
+                        'rgb(106,90,205)'
                     ]
                 }]
             },
@@ -182,7 +185,14 @@ function initializePage() {
                 responsive: true,
                 title: {
                     display: true,
-                    text: 'Progresso Total do Projeto'
+                    text: 'Progresso Total do Projeto',
+                    fontColor: '#FFFFFF'
+                },
+                legend: {
+                    position: 'right',
+                    labels: {
+                        fontColor: 'white'
+                    }
                 }
             }
         });
@@ -207,11 +217,11 @@ function initializePage() {
             labels: labels,
             datasets: [{
                 label: 'Trabalho Estimado',
-                backgroundColor: 'rgba(51, 153, 255, 0.4)',
+                backgroundColor: 'rgb(51, 153, 255)',
                 data: trabalhosEstimadosData
             }, {
                 label: 'Trabalho Realizado',
-                backgroundColor: 'rgba(0, 204, 0, 0.4)',
+                backgroundColor: 'rgb(255, 215, 0)',
                 data: trabalhosRealizadosData
             }]
 
@@ -231,10 +241,14 @@ function initializePage() {
                 responsive: true,
                 legend: {
                     position: 'right',
+                    labels: {
+                        fontColor: 'white'
+                    }
                 },
                 title: {
                     display: true,
-                    text: 'Progresso Detalhado do Projeto'
+                    text: 'Progresso Detalhado do Projeto',
+                    fontColor: '#FFFFFF'
                 }
             }
         });
