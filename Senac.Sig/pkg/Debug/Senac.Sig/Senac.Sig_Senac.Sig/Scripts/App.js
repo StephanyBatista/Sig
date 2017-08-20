@@ -157,7 +157,7 @@ function initializePage() {
             var item = items.get_current();
             
             labels.push(item.get_item('Title'));
-            data.push(item.get_item('_x0062_ht7'));
+            data.push(item.get_item('Qtd'));
         }
 
         console.log(labels);
