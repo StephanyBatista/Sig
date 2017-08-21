@@ -3,5 +3,7 @@
   <Module Name="Images">
     <File Path="Images\AppIcon.png" Url="Images/AppIcon.png" ReplaceContent="TRUE" />
     <File Path="Images\banner_senac.PNG" Url="Images/banner_senac.PNG" ReplaceContent="TRUE" />
+    <File Path="Images\gray_bg.png" Url="Images/gray_bg.png" ReplaceContent="TRUE" />
+    <File Path="Images\senac_logo.png" Url="Images/senac_logo.png" ReplaceContent="TRUE" />
   </Module>
 </Elements>

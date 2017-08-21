@@ -6,6 +6,10 @@ var tarefaList,
     documentoItems,
     avisoList,
     avisoItems,
+    progressoTotalDoProjetoList,
+    progressoTotalDoProjetoItems,
+    progressoDetalhadoDoProjetoList,
+    progressoDetalhadoDoProjetoItems,
     appweburl,
     hostweburl,
     context,
@@ -24,15 +28,22 @@ function initializePage() {
 
     var query = SP.CamlQuery.createAllItemsQuery();
     query.set_folderServerRelativeUrl('Documentos/');
-    tarefaList = web.get_lists().getByTitle("Tarefas");
+    tarefaList = web.get_lists().getByTitle("Diário de Bordo");
     tarefaItems = tarefaList.getItems(query);
     documentoList = web.get_lists().getByTitle("Documentos");
     documentoItems = documentoList.getItems(query);
     avisoList = web.get_lists().getByTitle("Avisos");
     avisoItems = avisoList.getItems(query);
+    progressoTotalDoProjetoList = web.get_lists().getByTitle("Progresso Total do Projeto");
+    progressoTotalDoProjetoItems = progressoTotalDoProjetoList.getItems(query);
+    progressoDetalhadoDoProjetoList = web.get_lists().getByTitle("Progresso Detalhado do Projeto");
+    progressoDetalhadoDoProjetoItems = progressoDetalhadoDoProjetoList.getItems(query);
 
     // This code runs when the DOM is ready and creates a context object which is needed to use the SharePoint object model
     $(document).ready(function () {
+
+        Chart.defaults.global.defaultFontColor = "#fff";
+
         loadLists();
     });
 
@@ -45,6 +56,10 @@ function initializePage() {
         context.load(avisoItems);
         context.load(documentoList);
         context.load(documentoItems, 'Include(Title, ContentType, File)');
+        context.load(progressoTotalDoProjetoList);
+        context.load(progressoTotalDoProjetoItems);
+        context.load(progressoDetalhadoDoProjetoList);
+        context.load(progressoDetalhadoDoProjetoItems);
         context.executeQueryAsync(onGetListsSuccess, onGetListsFail);
     }
 
@@ -55,6 +70,8 @@ function initializePage() {
         prepareAvisosList();
         prepareTarefasList();
         prepareDocumentosList();
+        prepareProgressoTotalDoProjetoList();
+        prepareProgressoDetalhadoDoProjetoList();
 
         $('#s4-titlerow').css('display', 'none');
     }
@@ -130,8 +147,115 @@ function initializePage() {
         }
     }
 
+    function prepareProgressoTotalDoProjetoList() {
+
+        var items = progressoTotalDoProjetoItems.getEnumerator();
+        var labels = [];
+        var data = [];
+
+        while (items.moveNext()) {
+            var item = items.get_current();
+            
+            labels.push(item.get_item('Title'));
+            data.push(item.get_item('Qtd'));
+        }
+
+        console.log(labels);
+        console.log(data);
+
+        var ctx = document.getElementById("progressoTotalDoProjeto");
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Progresso Total do Projeto',
+                    data: data,
+                    backgroundColor: [
+                        'rgb(51, 153, 255)',
+                        'rgb(255, 215, 0)',
+                        'rgb(255,69,0)',
+                        'rgb(46,139,87)',
+                        'rgb(160,82,45)',
+                        'rgb(106,90,205)'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true,
+                    text: 'Progresso Total do Projeto',
+                    fontColor: '#FFFFFF'
+                },
+                legend: {
+                    position: 'right',
+                    labels: {
+                        fontColor: 'white'
+                    }
+                }
+            }
+        });
+    }
+
+    function prepareProgressoDetalhadoDoProjetoList() {
+
+        var items = progressoDetalhadoDoProjetoItems.getEnumerator();
+        var labels = [];
+        var trabalhosEstimadosData = [];
+        var trabalhosRealizadosData = [];
+
+        while (items.moveNext()) {
+            var item = items.get_current();
+
+            labels.push(item.get_item('Title'));
+            trabalhosEstimadosData.push(item.get_item('Trabalho_x0020_Estimado'));
+            trabalhosRealizadosData.push(item.get_item('Trabalho_x0020_Realizado'));
+        }
+
+        var barData = {
+            labels: labels,
+            datasets: [{
+                label: 'Trabalho Estimado',
+                backgroundColor: 'rgb(51, 153, 255)',
+                data: trabalhosEstimadosData
+            }, {
+                label: 'Trabalho Realizado',
+                backgroundColor: 'rgb(255, 215, 0)',
+                data: trabalhosRealizadosData
+            }]
+
+        };
+
+        var ctx = document.getElementById("progressoDetalhadoDoProjeto");
+        new Chart(ctx, {
+            type: 'horizontalBar',
+            data: barData,
+            options: {
+                
+                elements: {
+                    rectangle: {
+                        borderWidth: 2,
+                    }
+                },
+                responsive: true,
+                legend: {
+                    position: 'right',
+                    labels: {
+                        fontColor: 'white'
+                    }
+                },
+                title: {
+                    display: true,
+                    text: 'Progresso Detalhado do Projeto',
+                    fontColor: '#FFFFFF'
+                }
+            }
+        });
+    }
+
     // This function is executed if the above call fails
     function onGetListsFail(sender, args) {
-        alert('Failed to get user name. Error:' + args.get_message());
+        alert('Erro:' + args.get_message());
     }
 }

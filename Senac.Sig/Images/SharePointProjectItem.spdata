@@ -4,5 +4,7 @@
     <ProjectItemFile Source="Elements.xml" Target="Images\" Type="ElementManifest" />
     <ProjectItemFile Source="AppIcon.png" Target="Images\" Type="ElementFile" />
     <ProjectItemFile Source="banner_senac.PNG" Target="Images\" Type="ElementFile" />
+    <ProjectItemFile Source="gray_bg.png" Target="Images\" Type="ElementFile" />
+    <ProjectItemFile Source="senac_logo.png" Target="Images\" Type="ElementFile" />
   </Files>
 </ProjectItem>

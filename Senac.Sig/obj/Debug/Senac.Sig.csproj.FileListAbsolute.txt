@@ -4,3 +4,7 @@ C:\source\Senac\Senac.Sig\obj\Debug\Senac.Sig.pdb
 C:\source\Sig\Senac.Sig\bin\Debug\Senac.Sig.pdb
 C:\source\Sig\Senac.Sig\obj\Debug\Senac.Sig.dll
 C:\source\Sig\Senac.Sig\obj\Debug\Senac.Sig.pdb
+C:\source\Senac\Senac.Sig\obj\Debug\Senac.Sig.csprojResolveAssemblyReference.cache
+C:\source\Senac\Senac.Sig\obj\Debug\Senac.Sig.csproj.CoreCompileInputs.cache
+C:\source\Sig\Senac.Sig\obj\Debug\Senac.Sig.csprojResolveAssemblyReference.cache
+C:\source\Sig\Senac.Sig\obj\Debug\Senac.Sig.csproj.CoreCompileInputs.cache

@@ -1610,8 +1610,8 @@ pre code {
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 .row {
   margin-left: -15px;
@@ -4170,8 +4170,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar {
   position: relative;
-  min-height: 45px;
-  margin-bottom: 21px;
+  min-height: 90px;
+  margin-bottom: 0px;
   border: 1px solid transparent;
 }
 @media (min-width: 768px) {
@@ -7068,4 +7068,71 @@ input[type="checkbox"] {
 }
 .modal .close {
   color: #222222;
+}
+
+
+.blue-container{
+  background-image: linear-gradient(to top, #003466, #004384)
+}
+
+.gray-container{
+    background-image: url(../images/gray_bg.png);
+    background-position: center top;
+    background-repeat: no-repeat;  
+}
+
+.container-padding{
+  padding: 50px 10px;
+}
+
+h2.title {
+    color: #004587;
+    position: relative;
+    text-align: center;
+    width: 80%;
+    margin: 0px auto 0.9em;
+    padding: 0.5em 0px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    font-size: 42px;
+}
+
+h2.title::before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    display: block;
+    width: 70px;
+    height: 7px;
+    background-color: #f7941d;
+    border-left: 5px solid #fdc17e;
+    border-right: 5px solid #fdc17e;
+    transform: translateX(-50%) skewX(-35deg);
+}
+
+h2.title-white {
+    color: #ffffff;
+    position: relative;
+    text-align: center;
+    width: 80%;
+    margin: 0px auto 0.9em;
+    padding: 0.5em 0px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    font-size: 42px;
+}
+
+h2.title-white::before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    display: block;
+    width: 70px;
+    height: 7px;
+    background-color: #f7941d;
+    border-left: 5px solid #fdc17e;
+    border-right: 5px solid #fdc17e;
+    transform: translateX(-50%) skewX(-35deg);
 }

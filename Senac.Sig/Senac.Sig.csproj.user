@@ -2,13 +2,17 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <SharePointSiteUrl>https://devstephanybatista.sharepoint.com/</SharePointSiteUrl>
+    <ProjectView>ShowAllFiles</ProjectView>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <RemoteDebugEnabled>false</RemoteDebugEnabled>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{C1CDDADD-2546-481F-9697-4EA41081F2FC}">
         <ProjectStore>
-          <AppInstancePackageModifiedTime>2017-08-12T13:21:22.0263459Z</AppInstancePackageModifiedTime>
-          <AppInstanceId>33ee40e4-2ee3-4de0-83f9-65bf5307cee9</AppInstanceId>
+          <AppInstancePackageModifiedTime>2017-08-21T16:15:41.3608633Z</AppInstancePackageModifiedTime>
+          <AppInstanceId>30a23299-92da-417b-bfe0-847485c0c14f</AppInstanceId>
         </ProjectStore>
       </FlavorProperties>
     </VisualStudio>
