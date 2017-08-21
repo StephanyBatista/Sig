@@ -1,0 +1,4 @@
+C:\source\Sig\Senac.Sig\bin\Release\Senac.Sig.pdb
+C:\source\Sig\Senac.Sig\obj\Release\Senac.Sig.csproj.CoreCompileInputs.cache
+C:\source\Sig\Senac.Sig\obj\Release\Senac.Sig.dll
+C:\source\Sig\Senac.Sig\obj\Release\Senac.Sig.pdb
