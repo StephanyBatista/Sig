@@ -203,10 +203,9 @@ function initializePage() {
                     showZero: true,
                     fontSize: 18,
                     fontColor: '#fff',
-                    fontStyle: 'normal',
-                    fontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
-                    arc: true,
-                    position: 'default',
+                    fontStyle: 'bold',
+                    arc: false,
+                    position: 'outside',
                     overlap: true
                 }
             }

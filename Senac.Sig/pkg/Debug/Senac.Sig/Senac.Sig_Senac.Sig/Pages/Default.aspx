@@ -23,11 +23,14 @@
     <!-- Add your JavaScript to the following file -->
     <script type="text/javascript" src="../Scripts/App.js"></script>
     <script type="text/javascript">
-        $(function() {
+
+        $('#s4-ribbonrow').remove();
+
+        $(function () {
 
             $('#suiteBarDelta').css('display', 'none');
             $('#s4-ribbonrow').css('display', 'none');
-            $('#siteIcon').css('display', 'none');            
+            $('#siteIcon').css('display', 'none');
         });
     </script>
 </asp:Content>
@@ -69,13 +72,6 @@
                             <div class="col-md-12">
                                 <div id="noticiasDiv" class="list-group">
                                 </div>                        
-                            </div>
-                            <div class="col-md-12">
-                                <div class="pull-right">
-                                    <button type="button" class="btn btn-link">
-                                        <i class="glyphicon glyphicon-plus"></i> Ver mais
-                                    </button>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -166,19 +162,10 @@
                 <p>Todos os direitos reservados</p>
             </div>
             <div class="col-md-4 padding-top-footer-50">
-
-                <button type="button" class="btn btn-default btn-footer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <a href="https://www.facebook.com/senac" class="fa fa-facebook" aria-hidden="true"></a>
-                </button>
-                <button type="button" class="btn btn-default btn-footer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <a href="https://twitter.com/senacbrasil" class="fa fa-twitter" aria-hidden="true"></a>
-                </button>
-                <button type="button" class="btn btn-default btn-footer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <a href="https://www.linkedin.com/company-beta/165919/" class="fa fa-linkedin" aria-hidden="true"></a>
-                </button>
-                <button type="button" class="btn btn-default btn-footer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <a href="https://www.youtube.com/user/senacms" class="fa fa-youtube" aria-hidden="true"></a>
-                </button>                                                                                                
+                <a href="https://www.facebook.com/senac" class="btn"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="https://twitter.com/senacbrasil" class="btn"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/company-beta/165919/" class="btn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                <a href="https://www.youtube.com/user/senacms" class="btn"><i class="fa fa-youtube" aria-hidden="true"></i></a>  
             </div>                                        
         </div>
     </div> 

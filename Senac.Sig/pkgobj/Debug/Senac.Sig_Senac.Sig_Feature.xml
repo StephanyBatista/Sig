@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Description="Sistema de Informação Gerencial - SENAC" Id="a9560ed7-0bc9-4be9-96b5-6bfe92d56d5c" Scope="Web" Title="Sig" Version="1.0.1.5">
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Description="Sistema de Informação Gerencial - SENAC" Id="a9560ed7-0bc9-4be9-96b5-6bfe92d56d5c" Scope="Web" Title="Sig" Version="1.0.1.6">
   <ElementManifests>
     <ElementManifest Location="Pages\Elements.xml" />
     <ElementFile Location="Pages\Default.aspx" />
