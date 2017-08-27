@@ -3,6 +3,7 @@
   <PropertyGroup>
     <SharePointSiteUrl>https://devstephanybatista.sharepoint.com/</SharePointSiteUrl>
     <ProjectView>ShowAllFiles</ProjectView>
+    <WorkflowDebuggingClientSecret>7oLXIw40Yl2VQxCrNDhQ+AbyxT1tP+60idr71KBptZw=</WorkflowDebuggingClientSecret>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <RemoteDebugEnabled>false</RemoteDebugEnabled>
@@ -11,8 +12,9 @@
     <VisualStudio>
       <FlavorProperties GUID="{C1CDDADD-2546-481F-9697-4EA41081F2FC}">
         <ProjectStore>
-          <AppInstancePackageModifiedTime>2017-08-21T16:15:41.3608633Z</AppInstancePackageModifiedTime>
-          <AppInstanceId>30a23299-92da-417b-bfe0-847485c0c14f</AppInstanceId>
+          <AppInstancePackageModifiedTime>2017-08-27T21:52:53.6207298Z</AppInstancePackageModifiedTime>
+          <AppInstanceId>4a1ae1b6-cbf5-4955-b312-9f17ea03aaf2</AppInstanceId>
+          <IsWorkflowDebuggingEnabled>true</IsWorkflowDebuggingEnabled>
         </ProjectStore>
       </FlavorProperties>
     </VisualStudio>

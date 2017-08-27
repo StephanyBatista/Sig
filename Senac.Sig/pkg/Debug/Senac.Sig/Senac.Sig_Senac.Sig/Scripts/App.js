@@ -81,20 +81,21 @@ function initializePage() {
         var items = avisoItems.getEnumerator();
 
         while (items.moveNext()) {
+
             var item = items.get_current();
 
             var id = item.get_item('ID');
             var title = item.get_item('Title');
             var body = item.get_item('Body');
             var listRef = item.get_item('FileDirRef');
-            var url = listRef + '/DispForm.aspx?ID=' + id; 
+            var url = listRef + '/DispForm.aspx?ID=' + id;
 
             $('#noticiasDiv')
                 .append(
-                '<a href="' + url + '" class="list-group-item">'+
-                '<h4 class="list-group-item-heading"><strong>' + title + '</strong></h4>'+
-                '<p class="list-group-item-text">' + body + '</p>'+
-                '</a>');
+                    '<a href="' + url + '" class="list-group-item">' +
+                    '<h4 class="list-group-item-heading"><strong>' + title + '</strong></h4>' +
+                    '<p class="list-group-item-text">' + body + '</p>' +
+                    '</a>');
         }
     }
 
@@ -113,7 +114,9 @@ function initializePage() {
             var status = item.get_item('Status');
             var assignedTo = item.get_item('AssignedTo');
             var startDate = item.get_item('StartDate');
+            var startDateFormatted = startDate != null ? startDate.format('dd/MM/yyyy') : '';
             var dueDate = item.get_item('DueDate');
+            var dueDateFormatted = dueDate != null ? dueDate.format('dd/MM/yyyy') : '';
 
             $('#projetosTable tr:last')
                 .after('<tr>' +
@@ -122,8 +125,8 @@ function initializePage() {
                     '<td>' + percentComplete + '</td>' +
                     '<td>' + status + '</td>' +
                     '<td>' + assignedTo[0].get_lookupValue() + '</td>' +
-                    '<td>' + startDate.format('dd/MM/yyyy') + '</td>' +
-                    '<td>' + dueDate.format('dd/MM/yyyy') + '</td>' +
+                    '<td>' + startDateFormatted + '</td>' +
+                    '<td>' + dueDateFormatted + '</td>' +
                     '</tr >');
         }
     }
@@ -193,6 +196,18 @@ function initializePage() {
                     labels: {
                         fontColor: 'white'
                     }
+                },
+                pieceLabel: {
+                    render: 'value',
+                    precision: 0,
+                    showZero: true,
+                    fontSize: 18,
+                    fontColor: '#fff',
+                    fontStyle: 'normal',
+                    fontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+                    arc: true,
+                    position: 'default',
+                    overlap: true
                 }
             }
         });

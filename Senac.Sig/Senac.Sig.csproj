@@ -49,11 +49,9 @@
     <Content Include="Images\banner_senac.PNG" />
     <Content Include="Images\gray_bg.png" />
     <Content Include="Images\senac_logo.png" />
+    <Content Include="Images\senac_logo_branco.png" />
     <Content Include="Index.html" />
     <Content Include="Pages\Teste.html" />
-    <Content Include="Scripts\jquery-1.9.1.intellisense.js" />
-    <Content Include="Scripts\jquery-1.9.1.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.js" />
     <None Include="packages.config" />
     <None Include="Pages\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{6d67dd6b-7ba2-4fee-a519-70735a100057}</SharePointProjectItemId>
@@ -65,10 +63,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Scripts\jquery-1.9.1.min.map" />
     <None Include="Scripts\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{09aed884-a912-40e6-894e-20ca7a3f290e}</SharePointProjectItemId>
     </None>
+    <Content Include="Scripts\Chart.PieceLabel.min.js" />
     <Content Include="Scripts\Elements.xml" />
     <Content Include="Scripts\App.js" />
   </ItemGroup>
