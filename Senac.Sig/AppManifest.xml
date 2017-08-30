@@ -3,12 +3,12 @@
 <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
      Name="SenacSig"
      ProductID="{6d67dd6b-7ba2-4fee-a519-70735a100057}"
-     Version="1.0.1.2"
+     Version="1.0.1.6"
      SharePointMinVersion="16.0.0.0"
 >
   <Properties>
-    <Title>Sig - SENAC</Title>
     <StartPage>~appWebUrl/Pages/Default.aspx?{StandardTokens}</StartPage>
+    <Title>Sig - SENAC</Title>
   </Properties>
 
   <AppPrincipal>

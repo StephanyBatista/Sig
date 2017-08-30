@@ -3988,7 +3988,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li > a {
   position: relative;
   display: block;
-  padding: 10px 15px;
+  padding: 10px 20px;
+  margin: 5px
 }
 .nav > li > a:hover,
 .nav > li > a:focus {
@@ -4289,6 +4290,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-brand > img {
   display: block;
+  margin-right: 40px;
+  margin-top: 5px;
 }
 @media (min-width: 768px) {
   .navbar > .container .navbar-brand,
@@ -4359,7 +4362,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 @media (min-width: 768px) {
   .navbar-nav {
     float: left;
-    margin: 0;
+    margin-top: 20px;
   }
   .navbar-nav > li {
     float: left;
@@ -4513,12 +4516,16 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #ffffff;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #ffffff;
+  color: #004587;
+  font-size: 16px;
+  font-weight: 400;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
   color: #ffffff;
-  background-color: #272727;
+  background-color: #004384;
+  background-image: linear-gradient(to top, #003466, #004384);
+  border-radius: 15px;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
@@ -6770,7 +6777,6 @@ button.close {
   box-shadow: none;
 }
 .navbar .btn {
-  padding-top: 6px;
   padding-bottom: 6px;
 }
 .navbar-form {
@@ -7135,4 +7141,48 @@ h2.title-white::before {
     border-left: 5px solid #fdc17e;
     border-right: 5px solid #fdc17e;
     transform: translateX(-50%) skewX(-35deg);
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 130px;
+  background-color: #004384;
+  border-top: 4px solid #f7941d;
+  background-image: linear-gradient(to top, #003466, #004384);  
+}
+.footer p{
+  color: #ffffff;
+}
+.btn-footer{
+  border-radius: 8px;
+}
+.btn-footer:hover{
+  background-image: -webkit-linear-gradient(top, #f7941d 0%, #f7941d 100%);
+  background-image: -o-linear-gradient(top, #f7941d 0%, #f7941d 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f7941d), to(#f7941d));
+  background-image: linear-gradient(to bottom, #f7941d 0%, #f7941d 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7941d', endColorstr='#f7941d', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  background-repeat: repeat-x;
+  border-color: #f7941d;
+  border-color: #f7941d;  
+  background-color: #f7941d !important;  
+}
+.padding-top-footer-50{
+  padding-top: 50px;
+}
+.padding-top-footer-60{
+  padding-top: 60px;
+}
+.padding-top-footer-20{
+  padding-top: 20px;
 }

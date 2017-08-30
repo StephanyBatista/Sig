@@ -1,1 +1,0 @@
-C:\source\Sig\Senac.Sig\bin\Release\app.publish\1.0.1.2\Senac.Sig.app

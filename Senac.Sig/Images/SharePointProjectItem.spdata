@@ -6,5 +6,6 @@
     <ProjectItemFile Source="banner_senac.PNG" Target="Images\" Type="ElementFile" />
     <ProjectItemFile Source="gray_bg.png" Target="Images\" Type="ElementFile" />
     <ProjectItemFile Source="senac_logo.png" Target="Images\" Type="ElementFile" />
+    <ProjectItemFile Source="senac_logo_branco.png" Target="Images\" Type="ElementFile" />
   </Files>
 </ProjectItem>
