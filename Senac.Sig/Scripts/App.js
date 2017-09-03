@@ -79,6 +79,7 @@ function initializePage() {
     function prepareAvisosList() {
 
         var items = avisoItems.getEnumerator();
+        var itemStoreds = [];
 
         while (items.moveNext()) {
 
@@ -90,12 +91,23 @@ function initializePage() {
             var listRef = item.get_item('FileDirRef');
             var url = listRef + '/DispForm.aspx?ID=' + id;
 
+            itemStoreds.push({ id: id, title: title, body: body, listRef: listRef, url: url });
+        }
+
+        var itemMaxNumber = 3;
+        for (var i = itemStoreds.length - 1; i >= 0; i--) {
+
+            if (itemMaxNumber === 0)
+                break;
+
             $('#noticiasDiv')
                 .append(
-                    '<a href="' + url + '" class="list-group-item">' +
-                    '<h4 class="list-group-item-heading"><strong>' + title + '</strong></h4>' +
-                    '<p class="list-group-item-text">' + body + '</p>' +
-                    '</a>');
+                '<a href="' + itemStoreds[i].url + '" class="list-group-item">' +
+                '<h4 class="list-group-item-heading"><strong>' + itemStoreds[i].title + '</strong></h4>' +
+                '<p class="list-group-item-text">' + itemStoreds[i].body + '</p>' +
+                '</a>');
+
+            itemMaxNumber--;
         }
     }
 
