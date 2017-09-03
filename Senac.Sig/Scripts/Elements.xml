@@ -1,7 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   <Module Name="Scripts">
-    <File Path="Scripts\App.js" Url="Scripts/App.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\Lists\App.js" Url="Scripts/Lists/App.js" ReplaceContent="TRUE" />
     <File Path="Scripts\Chart.PieceLabel.min.js" Url="Scripts/Chart.PieceLabel.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\Lists\Avisos.js" Url="Scripts/Lists/Avisos.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\Lists\Tarefas.js" Url="Scripts/Lists/Tarefas.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\Lists\Documentos.js" Url="Scripts/Lists/Documentos.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\Lists\Graficos.js" Url="Scripts/Lists/Graficos.js" ReplaceContent="TRUE" />
   </Module>
 </Elements>
