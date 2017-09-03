@@ -1,5 +1,7 @@
 ﻿'use strict';
 
+var avisosStoreds = [];
+
 var tarefaList,    
     tarefaItems,
     documentoList,
@@ -79,7 +81,6 @@ function initializePage() {
     function prepareAvisosList() {
 
         var items = avisoItems.getEnumerator();
-        var itemStoreds = [];
 
         while (items.moveNext()) {
 
@@ -91,24 +92,10 @@ function initializePage() {
             var listRef = item.get_item('FileDirRef');
             var url = listRef + '/DispForm.aspx?ID=' + id;
 
-            itemStoreds.push({ id: id, title: title, body: body, listRef: listRef, url: url });
+            avisosStoreds.push({ id: id, title: title, body: body, listRef: listRef, url: url });
         }
 
-        var itemMaxNumber = 3;
-        for (var i = itemStoreds.length - 1; i >= 0; i--) {
-
-            if (itemMaxNumber === 0)
-                break;
-
-            $('#noticiasDiv')
-                .append(
-                '<a href="' + itemStoreds[i].url + '" class="list-group-item">' +
-                '<h4 class="list-group-item-heading"><strong>' + itemStoreds[i].title + '</strong></h4>' +
-                '<p class="list-group-item-text">' + itemStoreds[i].body + '</p>' +
-                '</a>');
-
-            itemMaxNumber--;
-        }
+        populateAvisos(true);
     }
 
     function prepareTarefasList() {
@@ -283,5 +270,30 @@ function initializePage() {
     // This function is executed if the above call fails
     function onGetListsFail(sender, args) {
         alert('Erro:' + args.get_message());
+    }
+}
+
+function populateAvisos(onlyThree) {
+
+    var itemMaxNumber = 3;
+    for (var index = avisosStoreds.length - 1; index >= 0; index--) {
+
+        if (itemMaxNumber === 0 && onlyThree) {
+
+            $('#verMais').removeClass('hidden');
+            break;
+        }
+        else
+            $('#verMais').addClass('hidden');
+
+        $('#noticiasDiv')
+            .append(
+                '<a href="' + avisosStoreds[index].url + '" class="list-group-item">' +
+                '<h4 class="list-group-item-heading"><strong>' + avisosStoreds[index].title + '</strong></h4>' +
+                '<p class="list-group-item-text">' + avisosStoreds[index].body + '</p>' +
+            '</a>');
+
+        avisosStoreds.splice(index, 1);
+        itemMaxNumber--;
     }
 }

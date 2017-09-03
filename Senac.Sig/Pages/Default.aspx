@@ -73,6 +73,13 @@
                                 <div id="noticiasDiv" class="list-group">
                                 </div>                        
                             </div>
+                            <div class="col-md-12">
+                                <div class="pull-right">
+                                    <button type="button" class="btn btn-link hidden" id="verMais" onclick="populateAvisos(false)">
+                                        <i class="glyphicon glyphicon-plus"></i> Ver mais
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>                
@@ -151,22 +158,32 @@
         </section>
     </div>
     
-    <div class="container footerSig">
-        <div class="row">
-            <div class="col-md-4 padding-top-footer-20">
-                <a class="navbar-brand" href="#">
-                    <img src="../images/senac_logo_branco.png" width="100" alt="Imagem: logo do Senac"/>
-                </a>                        
+    <footer class="footerSig">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 padding-top-footer-20">
+                    <a class="navbar-brand" href="#">
+                        <img src="../images/senac_logo_branco.png" width="100" alt="Imagem: logo do Senac"/>
+                    </a>                        
+                </div>
+                <div class="col-md-4 padding-top-footer-60">
+                    <p>Todos os direitos reservados</p>
+                </div>
+                <div class="col-md-4 padding-top-footer-50">
+                    <a type="button" href="https://www.facebook.com/senac" class="btn btn-default btn-footer">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                    <a type="button" href="https://twitter.com/senacbrasil" class="btn btn-default btn-footer">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a type="button" href="https://www.linkedin.com/company-beta/165919/" class="btn btn-default btn-footer">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                    <a type="button" href="https://www.youtube.com/user/senacms" class="btn btn-default btn-footer">
+                        <i class="fa fa-youtube" aria-hidden="true"></i>
+                    </a> 
+                </div>                                        
             </div>
-            <div class="col-md-4 padding-top-footer-60">
-                <p>Todos os direitos reservados</p>
-            </div>
-            <div class="col-md-4 padding-top-footer-50">
-                <a href="https://www.facebook.com/senac" class="btn"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                <a href="https://twitter.com/senacbrasil" class="btn"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                <a href="https://www.linkedin.com/company-beta/165919/" class="btn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                <a href="https://www.youtube.com/user/senacms" class="btn"><i class="fa fa-youtube" aria-hidden="true"></i></a>  
-            </div>                                        
         </div>
-    </div> 
+    </footer> 
 </asp:Content>

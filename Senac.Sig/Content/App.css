@@ -8,6 +8,10 @@
     background-image: linear-gradient(to top, #003466, #004384);  
 }
 
+.footerSig p {
+    color: #ffffff;
+}
+
 .alert {
     padding: 0px;
     margin-bottom: 0px;
