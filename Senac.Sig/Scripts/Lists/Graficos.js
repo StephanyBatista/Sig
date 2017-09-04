@@ -143,6 +143,8 @@ function prepareEvolucaoDoProjetoList(evolucaoDoProjetoItems) {
             maxValue = horaPrevista;
     }
 
+    var 
+
     var barData = {
         labels: labels,
         datasets: [{
