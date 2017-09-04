@@ -117,3 +117,90 @@ function prepareProgressoDetalhadoDoProjetoList(progressoDetalhadoDoProjetoItems
         }
     });
 }
+
+function prepareEvolucaoDoProjetoList(evolucaoDoProjetoItems) {
+
+    var items = evolucaoDoProjetoItems.getEnumerator();
+    var labels = [];
+    var horasRealizadas = [];
+    var horasPrevistas = [];
+    var maxValue = 0;
+    var minValue = 999999;
+
+    while (items.moveNext()) {
+        var item = items.get_current();
+
+        labels.push(item.get_item('Data').format('MM/yyyy'));
+        var horaRealizada = item.get_item('Horas_x0020_Realizadas');
+        horasRealizadas.push(horaRealizada);
+        var horaPrevista = item.get_item('Horas_x0020_Previstas');
+        horasPrevistas.push(horaPrevista);
+
+        if (maxValue < horaRealizada)
+            maxValue = horaRealizada;
+
+        if (maxValue < horaPrevista)
+            maxValue = horaPrevista;
+    }
+
+    var barData = {
+        labels: labels,
+        datasets: [{
+            label: 'Horas Realizadas',
+            backgroundColor: 'rgb(51, 153, 255)',
+            data: horasRealizadas,
+            fill: false
+        }, {
+            label: 'Horas Previstas',
+            backgroundColor: 'rgb(255, 215, 0)',
+            data: horasPrevistas,
+            fill: false,
+        }]
+
+    };
+
+    var ctx = document.getElementById("evolucaoDoProjeto");
+    new Chart(ctx, {
+        type: 'line',
+        data: barData,
+        options: {
+
+            responsive: true,
+            title: {
+                display: true,
+                text: 'Chart.js Line Chart'
+            },
+            tooltips: {
+                mode: 'index',
+                intersect: false,
+            },
+            hover: {
+                mode: 'nearest',
+                intersect: true
+            },
+            scales: {
+                xAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Month'
+                    }
+                }],
+                yAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Value'
+                    },
+                    ticks: {
+                        min: 0,
+                        max: maxValue,
+
+                        // forces step size to be 5 units
+                        stepSize: 5
+                    }
+                }]
+            }
+        }
+    });
+}
