@@ -21,7 +21,11 @@
     <script src="../Scripts/Chart.PieceLabel.min.js"></script>
     <!-- Add your CSS styles to the following file -->
     <!-- Add your JavaScript to the following file -->
-    <script type="text/javascript" src="../Scripts/App.js"></script>
+    <script type="text/javascript" src="../Scripts/Lists/App.js"></script>
+    <script type="text/javascript" src="../Scripts/Lists/Avisos.js"></script>
+    <script type="text/javascript" src="../Scripts/Lists/Tarefas.js"></script>
+    <script type="text/javascript" src="../Scripts/Lists/Documentos.js"></script>
+    <script type="text/javascript" src="../Scripts/Lists/Graficos.js"></script>
     <script type="text/javascript">
 
         $('#s4-ribbonrow').remove();
@@ -72,6 +76,13 @@
                             <div class="col-md-12">
                                 <div id="noticiasDiv" class="list-group">
                                 </div>                        
+                            </div>
+                            <div class="col-md-12">
+                                <div class="pull-right">
+                                    <button type="button" class="btn btn-link hidden" id="verMais" onclick="populateAvisos(false)">
+                                        <i class="glyphicon glyphicon-plus"></i> Ver mais
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -136,7 +147,7 @@
                                     <thead>
                                     <tr>
                                         <th>Nome</th>
-                                        <th></th>
+                                        <th>Tamanho</th>
                                     </tr>                                    
                                     </thead>
                                     <tbody>

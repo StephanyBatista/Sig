@@ -66,9 +66,13 @@
     <None Include="Scripts\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{09aed884-a912-40e6-894e-20ca7a3f290e}</SharePointProjectItemId>
     </None>
+    <Content Include="Scripts\Lists\Graficos.js" />
+    <Content Include="Scripts\Lists\Documentos.js" />
+    <Content Include="Scripts\Lists\Tarefas.js" />
+    <Content Include="Scripts\Lists\Avisos.js" />
     <Content Include="Scripts\Chart.PieceLabel.min.js" />
     <Content Include="Scripts\Elements.xml" />
-    <Content Include="Scripts\App.js" />
+    <Content Include="Scripts\Lists\App.js" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Content\SharePointProjectItem.spdata">
