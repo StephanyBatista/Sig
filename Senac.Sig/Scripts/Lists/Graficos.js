@@ -124,37 +124,42 @@ function prepareEvolucaoDoProjetoList(evolucaoDoProjetoItems) {
     var labels = [];
     var horasRealizadas = [];
     var horasPrevistas = [];
-    var maxValue = 0;
-    var minValue = 999999;
+    var horasOrdered = [];
+    
 
     while (items.moveNext()) {
         var item = items.get_current();
 
         labels.push(item.get_item('Data').format('MM/yyyy'));
         var horaRealizada = item.get_item('Horas_x0020_Realizadas');
-        horasRealizadas.push(horaRealizada);
         var horaPrevista = item.get_item('Horas_x0020_Previstas');
+        
+        horasRealizadas.push(horaRealizada);
         horasPrevistas.push(horaPrevista);
 
-        if (maxValue < horaRealizada)
-            maxValue = horaRealizada;
-
-        if (maxValue < horaPrevista)
-            maxValue = horaPrevista;
+        if (horaRealizada)
+            horasOrdered.push(horaRealizada);
+        if (horaPrevista)
+            horasOrdered.push(horaPrevista);
     }
 
-    var 
+    horasOrdered.sort();
+    var maxValue = horasOrdered[0]; 
+    var minValue = horasOrdered[horasOrdered.length - 1];
+
 
     var barData = {
         labels: labels,
         datasets: [{
             label: 'Horas Realizadas',
+            borderColor: 'rgb(51, 153, 255)',
             backgroundColor: 'rgb(51, 153, 255)',
             data: horasRealizadas,
             fill: false
         }, {
             label: 'Horas Previstas',
             backgroundColor: 'rgb(255, 215, 0)',
+            borderColor: 'rgb(255, 215, 0)',
             data: horasPrevistas,
             fill: false,
         }]
@@ -193,13 +198,6 @@ function prepareEvolucaoDoProjetoList(evolucaoDoProjetoItems) {
                     scaleLabel: {
                         display: true,
                         labelString: 'Value'
-                    },
-                    ticks: {
-                        min: 0,
-                        max: maxValue,
-
-                        // forces step size to be 5 units
-                        stepSize: 5
                     }
                 }]
             }
