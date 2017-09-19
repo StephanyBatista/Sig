@@ -117,3 +117,90 @@ function prepareProgressoDetalhadoDoProjetoList(progressoDetalhadoDoProjetoItems
         }
     });
 }
+
+function prepareEvolucaoDoProjetoList(evolucaoDoProjetoItems) {
+
+    var items = evolucaoDoProjetoItems.getEnumerator();
+    var labels = [];
+    var horasRealizadas = [];
+    var horasPrevistas = [];
+    var horasOrdered = [];
+    
+
+    while (items.moveNext()) {
+        var item = items.get_current();
+
+        labels.push(item.get_item('Data').format('MM/yyyy'));
+        var horaRealizada = item.get_item('Horas_x0020_Realizadas');
+        var horaPrevista = item.get_item('Horas_x0020_Previstas');
+        
+        horasRealizadas.push(horaRealizada);
+        horasPrevistas.push(horaPrevista);
+
+        if (horaRealizada)
+            horasOrdered.push(horaRealizada);
+        if (horaPrevista)
+            horasOrdered.push(horaPrevista);
+    }
+
+    horasOrdered.sort();
+    var maxValue = horasOrdered[0]; 
+    var minValue = horasOrdered[horasOrdered.length - 1];
+
+
+    var barData = {
+        labels: labels,
+        datasets: [{
+            label: 'Horas Realizadas',
+            borderColor: 'rgb(51, 153, 255)',
+            backgroundColor: 'rgb(51, 153, 255)',
+            data: horasRealizadas,
+            fill: false
+        }, {
+            label: 'Horas Previstas',
+            backgroundColor: 'rgb(255, 215, 0)',
+            borderColor: 'rgb(255, 215, 0)',
+            data: horasPrevistas,
+            fill: false,
+        }]
+
+    };
+
+    var ctx = document.getElementById("evolucaoDoProjeto");
+    new Chart(ctx, {
+        type: 'line',
+        data: barData,
+        options: {
+
+            responsive: true,
+            title: {
+                display: true,
+                text: 'Chart.js Line Chart'
+            },
+            tooltips: {
+                mode: 'index',
+                intersect: false,
+            },
+            hover: {
+                mode: 'nearest',
+                intersect: true
+            },
+            scales: {
+                xAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Month'
+                    }
+                }],
+                yAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Value'
+                    }
+                }]
+            }
+        }
+    });
+}
