@@ -9,7 +9,7 @@ function prepareDocumentosList(documentoItems) {
 
         var title = item.get_file().get_name();
         var file = item.get_file().get_linkingUrl();
-        var length = parseInt(item.get_file().get_length()) / 1024;
+        var length = parseInt(parseInt(item.get_file().get_length()) / 1024);
 
         $('#documentosTable tr:last')
             .after('<tr>' +

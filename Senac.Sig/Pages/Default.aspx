@@ -102,7 +102,10 @@
                             <div class="col-md-6">
                                 <canvas id="progressoDetalhadoDoProjeto" width="auto" height="200"></canvas>
                             </div>
-                            <div class="col-md-6">
+                            
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
                                 <canvas id="evolucaoDoProjeto" width="auto" height="200"></canvas>
                             </div>
                         </div>

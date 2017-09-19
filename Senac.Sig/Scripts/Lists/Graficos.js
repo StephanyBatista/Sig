@@ -175,7 +175,7 @@ function prepareEvolucaoDoProjetoList(evolucaoDoProjetoItems) {
             responsive: true,
             title: {
                 display: true,
-                text: 'Chart.js Line Chart'
+                text: 'Evolução do Projeto'
             },
             tooltips: {
                 mode: 'index',
@@ -190,14 +190,14 @@ function prepareEvolucaoDoProjetoList(evolucaoDoProjetoItems) {
                     display: true,
                     scaleLabel: {
                         display: true,
-                        labelString: 'Month'
+                        labelString: 'Mês'
                     }
                 }],
                 yAxes: [{
                     display: true,
                     scaleLabel: {
                         display: true,
-                        labelString: 'Value'
+                        labelString: 'Horas'
                     }
                 }]
             }
