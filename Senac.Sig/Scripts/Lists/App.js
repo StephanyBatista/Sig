@@ -79,7 +79,7 @@ function initializePage() {
         prepareDocumentosList(documentoItems);
         prepareProgressoTotalDoProjetoList(progressoTotalDoProjetoItems);
         prepareProgressoDetalhadoDoProjetoList(progressoDetalhadoDoProjetoItems);
-        prepareEvolucaoDoProjetoList(evolucaoDoProjetoItems);
+        //prepareEvolucaoDoProjetoList(evolucaoDoProjetoItems);
 
         $('#s4-titlerow').css('display', 'none');
     }
