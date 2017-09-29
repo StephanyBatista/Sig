@@ -9,7 +9,8 @@ function prepareProgressoTotalDoProjetoList(progressoTotalDoProjetoItems) {
     while (items.moveNext()) {
         var item = items.get_current();
 
-        labels.push(item.get_item('Title'));
+        var titulo = item.get_item('Title') + ': ' + item.get_item('Qtd');
+        labels.push(titulo);
         data.push(item.get_item('Qtd'));
     }
 
@@ -46,17 +47,6 @@ function prepareProgressoTotalDoProjetoList(progressoTotalDoProjetoItems) {
                 labels: {
                     fontColor: 'white'
                 }
-            },
-            pieceLabel: {
-                render: 'value',
-                precision: 0,
-                showZero: true,
-                fontSize: 18,
-                fontColor: '#fff',
-                fontStyle: 'bold',
-                arc: false,
-                position: 'outside',
-                overlap: true
             }
         }
     });

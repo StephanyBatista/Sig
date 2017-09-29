@@ -94,7 +94,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="title-white">Gráficos de acompanhamento de projetos</h2>
+                        <h2 class="title-white">Gráficos de acompanhamento do projeto</h2>
                         <div class="row">
                             <div class="col-md-6">
                                 <canvas id="progressoTotalDoProjeto" width="auto" height="200"></canvas>
