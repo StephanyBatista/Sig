@@ -12,6 +12,8 @@ var tarefaList,
     progressoDetalhadoDoProjetoItems,
     evolucaoDoProjetoList,
     evolucaoDoProjetoItems,
+    demonstrativoFinanceiroList,
+    demonstrativoFinanceiroItems,
     appweburl,
     hostweburl,
     context,
@@ -43,6 +45,8 @@ function initializePage() {
     progressoDetalhadoDoProjetoItems = progressoDetalhadoDoProjetoList.getItems(query);
     evolucaoDoProjetoList = web.get_lists().getByTitle("Evolução do Projeto");
     evolucaoDoProjetoItems = evolucaoDoProjetoList.getItems(query);
+    demonstrativoFinanceiroList = web.get_lists().getByTitle("Demonstrativo Financeiro 2018");
+    demonstrativoFinanceiroItems = demonstrativoFinanceiroList.getItems(query);
 
     // This code runs when the DOM is ready and creates a context object which is needed to use the SharePoint object model
     $(document).ready(function () {
@@ -67,6 +71,9 @@ function initializePage() {
         context.load(progressoDetalhadoDoProjetoItems);
         context.load(evolucaoDoProjetoList);
         context.load(evolucaoDoProjetoItems);
+        context.load(demonstrativoFinanceiroList);
+        context.load(demonstrativoFinanceiroItems);
+        context.load(evolucaoDoProjetoItems);
         context.executeQueryAsync(onGetListsSuccess, onGetListsFail);
     }
 
@@ -79,6 +86,7 @@ function initializePage() {
         prepareDocumentosList(documentoItems);
         prepareProgressoTotalDoProjetoList(progressoTotalDoProjetoItems);
         prepareProgressoDetalhadoDoProjetoList(progressoDetalhadoDoProjetoItems);
+        prepareDemonstrativoFinanceiroList(demonstrativoFinanceiroItems);
         //prepareEvolucaoDoProjetoList(evolucaoDoProjetoItems);
 
         $('#s4-titlerow').css('display', 'none');

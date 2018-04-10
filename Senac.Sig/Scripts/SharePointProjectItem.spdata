@@ -8,5 +8,6 @@
     <ProjectItemFile Source="Lists\Tarefas.js" Target="Scripts\Lists\" Type="ElementFile" />
     <ProjectItemFile Source="Lists\Documentos.js" Target="Scripts\Lists\" Type="ElementFile" />
     <ProjectItemFile Source="Lists\Graficos.js" Target="Scripts\Lists\" Type="ElementFile" />
+    <ProjectItemFile Source="Lists\DemonstrativoFinanceiro.js" Target="Scripts\Lists\" Type="ElementFile" />
   </Files>
 </ProjectItem>

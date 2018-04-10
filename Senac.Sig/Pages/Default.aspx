@@ -26,6 +26,7 @@
     <script type="text/javascript" src="../Scripts/Lists/Tarefas.js"></script>
     <script type="text/javascript" src="../Scripts/Lists/Documentos.js"></script>
     <script type="text/javascript" src="../Scripts/Lists/Graficos.js"></script>
+    <script type="text/javascript" src="../Scripts/Lists/DemonstrativoFinanceiro.js"></script>
     <script type="text/javascript">
 
         $('#s4-ribbonrow').remove();
@@ -135,6 +136,20 @@
                                     <tbody>
                                     </tbody>
                                 </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="blue-container container-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="title-white">Demonstrativo Financeiro</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <canvas id="demonstrativoFinanceiro" width="auto" height="200"></canvas>
                             </div>
                         </div>
                     </div>
