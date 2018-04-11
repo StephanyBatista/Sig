@@ -7,17 +7,38 @@ function prepareDemonstrativoFinanceiroList(demonstrativoFinanceiroItems) {
     var listaDeTotal = [];
     var listaDoDn = [];
     var listaDoDr = [];
+    var listaGeral = [];
+    var index = 0;
+    var previsto2018;
 
+    listaGeral[0] = [];
+    listaGeral[1] = [];
+    listaGeral[2] = [];
     while (items.moveNext()) {
         var item = items.get_current();
-        labels.push(item.get_item('Title'));
+        var nome = item.get_item('Title');
+        if (nome === "Previsto 2018") {
+            previsto2018 = item.get_item('y6y4');
+            continue;
+        }
+        if (nome === "Realizado 2018:")
+            continue;
+
+        labels.push(nome);
 
         const total = item.get_item('y6y4');
-        listaDeTotal.push(total ? total.replace('R$', '').replace('.', '').replace('.', '').replace(',', '') : 0);
+        listaGeral[0][index] = total;
+        listaDeTotal.push(total ? total.replace('R$', '').replace(',', '').replace('.', '').replace('.', '') : 0);
+
         const dn = item.get_item('dp7r');
-        listaDoDn.push(dn ? dn.replace('R$', '').replace('.', '').replace('.', '').replace(',', '') : 0);
+        listaGeral[1][index] = dn;
+        listaDoDn.push(dn ? dn.replace('R$', '').replace(',', '').replace('.', '').replace('.', '') : 0);
+
         const dr = item.get_item('yx4a');
-        listaDoDr.push(dr ? dr.replace('R$', '').replace('.', '').replace('.', '').replace(',', '') : 0);
+        listaGeral[2][index] = dr;
+        listaDoDr.push(dr ? dr.replace('R$', '').replace(',', '').replace('.', '').replace('.', '') : 0);
+
+        index++;
     }
 
     var barData = {
@@ -42,10 +63,14 @@ function prepareDemonstrativoFinanceiroList(demonstrativoFinanceiroItems) {
         type: 'horizontalBar',
         data: barData,
         options: {
+            title: {
+                display: true,
+                text: 'Previsto 2018: ' + previsto2018
+            },
             tooltips: {
                 callbacks: {
                     label: function (tooltipItems, data) {
-                        return tooltipItems.xLabel.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+                        return listaGeral[tooltipItems.datasetIndex][tooltipItems.index];
                     }
                 }
             },
@@ -53,6 +78,7 @@ function prepareDemonstrativoFinanceiroList(demonstrativoFinanceiroItems) {
                 xAxes: [{
                     ticks: {
                         callback: function (value, index, values) {
+
                             return value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
                         }
                     }

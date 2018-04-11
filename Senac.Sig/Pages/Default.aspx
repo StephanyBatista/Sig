@@ -148,7 +148,7 @@
                     <div class="col-md-12">
                         <h2 class="title-white">Demonstrativo Financeiro</h2>
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <canvas id="demonstrativoFinanceiro" width="auto" height="200"></canvas>
                             </div>
                         </div>

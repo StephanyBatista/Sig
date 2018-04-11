@@ -3,7 +3,7 @@
 <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
      Name="SenacSig"
      ProductID="{6d67dd6b-7ba2-4fee-a519-70735a100057}"
-     Version="1.0.1.21"
+     Version="1.0.1.26"
      SharePointMinVersion="16.0.0.0"
 >
   <Properties>
