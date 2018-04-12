@@ -7,13 +7,11 @@ function prepareDemonstrativoFinanceiroList(demonstrativoFinanceiroItems) {
     var listaDeTotal = [];
     var listaDoDn = [];
     var listaDoDr = [];
-    var listaGeral = [];
-    var index = 0;
     var previsto2018;
-
-    listaGeral[0] = [];
-    listaGeral[1] = [];
-    listaGeral[2] = [];
+    var totalDoDemonstrativoFinanceiro = 0;
+    var totalDoDnDoDemonostrativoFinanceiro = 0;
+    var totalDoDrDoDemonostrativoFinanceiro = 0;
+    
     while (items.moveNext()) {
         var item = items.get_current();
         var nome = item.get_item('Title');
@@ -21,24 +19,30 @@ function prepareDemonstrativoFinanceiroList(demonstrativoFinanceiroItems) {
             previsto2018 = item.get_item('y6y4');
             continue;
         }
-        if (nome === "Realizado 2018:")
+        if (nome === "Realizado 2018:" || nome === "Acumulado 2018")
             continue;
 
         labels.push(nome);
 
         const total = item.get_item('y6y4');
-        listaGeral[0][index] = total;
-        listaDeTotal.push(total ? total.replace('R$', '').replace(',', '').replace('.', '').replace('.', '') : 0);
+        listaDeTotal.push(validarERemoverFormatoDeDinheiro(total));
+        totalDoDemonstrativoFinanceiro += parseFloat(validarERemoverFormatoDeDinheiro(total));
 
         const dn = item.get_item('dp7r');
-        listaGeral[1][index] = dn;
-        listaDoDn.push(dn ? dn.replace('R$', '').replace(',', '').replace('.', '').replace('.', '') : 0);
+        listaDoDn.push(validarERemoverFormatoDeDinheiro(dn));
+        totalDoDnDoDemonostrativoFinanceiro += parseFloat(validarERemoverFormatoDeDinheiro(dn));
 
         const dr = item.get_item('yx4a');
-        listaGeral[2][index] = dr;
-        listaDoDr.push(dr ? dr.replace('R$', '').replace(',', '').replace('.', '').replace('.', '') : 0);
+        listaDoDr.push(validarERemoverFormatoDeDinheiro(dr));
+        totalDoDrDoDemonostrativoFinanceiro += parseFloat(validarERemoverFormatoDeDinheiro(dr));
+    }
 
-        index++;
+    $('#totalDF').text(totalDoDemonstrativoFinanceiro.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }));
+    $('#dnDF').text(totalDoDnDoDemonostrativoFinanceiro.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }));
+    $('#drDF').text(totalDoDrDoDemonostrativoFinanceiro.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }));
+
+    function validarERemoverFormatoDeDinheiro(valor) {
+        return valor ? valor.replace('R$', '').replace('.', '').replace('.', '').replace(',', '.') : 0;
     }
 
     var barData = {
@@ -63,6 +67,18 @@ function prepareDemonstrativoFinanceiroList(demonstrativoFinanceiroItems) {
         type: 'horizontalBar',
         data: barData,
         options: {
+            plugins: {
+                datalabels: {
+                    color: 'white',
+                    display: function (context) {
+                        return context.dataset.data[context.dataIndex] > 15;
+                    },
+                    font: {
+                        weight: 'bold'
+                    },
+                    formatter: Math.round
+                }
+            },
             title: {
                 display: true,
                 text: 'Previsto 2018: ' + previsto2018
@@ -70,15 +86,15 @@ function prepareDemonstrativoFinanceiroList(demonstrativoFinanceiroItems) {
             tooltips: {
                 callbacks: {
                     label: function (tooltipItems, data) {
-                        return listaGeral[tooltipItems.datasetIndex][tooltipItems.index];
+                        return tooltipItems.xLabel.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
                     }
                 }
             },
             scales: {
                 xAxes: [{
+                    display: true,
                     ticks: {
                         callback: function (value, index, values) {
-
                             return value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
                         }
                     }

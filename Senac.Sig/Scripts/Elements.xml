@@ -8,5 +8,6 @@
     <File Path="Scripts\Lists\Documentos.js" Url="Scripts/Lists/Documentos.js" ReplaceContent="TRUE" />
     <File Path="Scripts\Lists\Graficos.js" Url="Scripts/Lists/Graficos.js" ReplaceContent="TRUE" />
     <File Path="Scripts\Lists\DemonstrativoFinanceiro.js" Url="Scripts/Lists/DemonstrativoFinanceiro.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\chartjs-plugin-datalabels.min.js" Url="Scripts/chartjs-plugin-datalabels.min.js" ReplaceContent="TRUE" />
   </Module>
 </Elements>

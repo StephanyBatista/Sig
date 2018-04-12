@@ -9,5 +9,6 @@
     <ProjectItemFile Source="Lists\Documentos.js" Target="Scripts\Lists\" Type="ElementFile" />
     <ProjectItemFile Source="Lists\Graficos.js" Target="Scripts\Lists\" Type="ElementFile" />
     <ProjectItemFile Source="Lists\DemonstrativoFinanceiro.js" Target="Scripts\Lists\" Type="ElementFile" />
+    <ProjectItemFile Source="chartjs-plugin-datalabels.min.js" Target="Scripts\" Type="ElementFile" />
   </Files>
 </ProjectItem>

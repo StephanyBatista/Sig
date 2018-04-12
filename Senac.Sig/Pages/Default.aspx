@@ -19,6 +19,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
     <script src="../Scripts/Chart.PieceLabel.min.js"></script>
+    <script src="../Scripts/chartjs-plugin-datalabels.min.js"></script>
     <!-- Add your CSS styles to the following file -->
     <!-- Add your JavaScript to the following file -->
     <script type="text/javascript" src="../Scripts/Lists/App.js"></script>
@@ -147,6 +148,30 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h2 class="title-white">Demonstrativo Financeiro</h2>
+                        <div class="row">
+                            <div class="col-md-12 informativo-acumulado">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h2 class="white-text">Acumulado 2018</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label class="white-text">Total</label>
+                                        <p class="white-text" id="totalDF"></p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="white-text">DN (60%)</label>
+                                        <p class="white-text" id="dnDF"></p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="white-text">DRs (40%)</label>
+                                        <p class="white-text" id="drDF"></p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <canvas id="demonstrativoFinanceiro" width="auto" height="200"></canvas>
