@@ -68,6 +68,7 @@
     <None Include="Scripts\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{09aed884-a912-40e6-894e-20ca7a3f290e}</SharePointProjectItemId>
     </None>
+    <Content Include="Scripts\chartjs-plugin-datalabels.min.js" />
     <Content Include="Scripts\Lists\DemonstrativoFinanceiro.js" />
     <Content Include="Scripts\Lists\Graficos.js" />
     <Content Include="Scripts\Lists\Documentos.js" />

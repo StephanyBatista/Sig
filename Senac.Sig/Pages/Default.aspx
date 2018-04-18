@@ -19,7 +19,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
     <script src="../Scripts/Chart.PieceLabel.min.js"></script>
-    <script src="../Scripts/chartjs-plugin-datalabels.min.js"></script>
     <!-- Add your CSS styles to the following file -->
     <!-- Add your JavaScript to the following file -->
     <script type="text/javascript" src="../Scripts/Lists/App.js"></script>
